@@ -31,14 +31,4 @@
 			android:textSize="12dip"
 			android:textColor="@android:color/secondary_text_light"/>
 	</LinearLayout>
-	
-	<ImageView android:layout_width="wrap_content"
-		android:layout_height="wrap_content" 
-		android:src="@drawable/balloon_overlay_close"
-		android:id="@+id/close_img_button" 
-		android:paddingLeft="10dip"
-		android:paddingBottom="10dip" 
-		android:paddingRight="8dip"
-		android:paddingTop="8dip"/>
-
 </LinearLayout>

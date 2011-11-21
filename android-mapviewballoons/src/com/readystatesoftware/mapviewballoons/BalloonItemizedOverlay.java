@@ -15,8 +15,6 @@
 
 package com.readystatesoftware.mapviewballoons;
 
-
-
 import java.util.List;
 
 import android.graphics.drawable.Drawable;
@@ -146,6 +144,13 @@ public abstract class BalloonItemizedOverlay<Item extends OverlayItem> extends I
 		
 	}
 	
+	@Override
+	public boolean onTouchEvent(MotionEvent event, MapView mapView) {
+		hideBalloon();
+		return super.onTouchEvent(event, mapView);
+	}
+
+
 	/**
 	 * Sets the onTouchListener for the balloon being displayed, calling the
 	 * overridden {@link #onBalloonTap} method.
@@ -174,6 +179,7 @@ public abstract class BalloonItemizedOverlay<Item extends OverlayItem> extends I
 					if (d.setState(newStates)) {
 						d.invalidateSelf();
 					}
+					
 					if (Math.abs(startX - event.getX()) < 40 && 
 							Math.abs(startY - event.getY()) < 40 ) {
 						// call overridden method
